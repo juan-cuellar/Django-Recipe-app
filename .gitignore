@@ -1,0 +1,11 @@
+# System Files
+.DS_Store
+
+# IDE - VSCode
+.vscode/*
+
+# Environments
+.django_recipes_venv/
+
+# Folder
+recipes_image/
