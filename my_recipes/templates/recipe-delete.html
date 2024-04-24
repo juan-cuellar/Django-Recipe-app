@@ -1,0 +1,9 @@
+<form method="POST">
+    {% csrf_token %}
+    <h1 class="text-danger">Delete Recipe</h1>
+    <p class="text-danger">Are you sure you want to delete this recipe? '{{ recipe.name }}' </p>
+    <input action="{% url 'recipe-delete' recipe.id %}" type="submit" value="Delete">
+    <a class="text-success" href="{% url 'recipe-list' %}">Back</a>
+
+</form>
+

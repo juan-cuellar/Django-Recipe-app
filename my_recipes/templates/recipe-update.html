@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <form action="" method="POST" class="card card-body" enctype="multipart/form-data">
+                <h1 class="text-primary">Update Recipe</h1>
+                {% csrf_token %}
+                {{form.as_p}}
+                <input class="btn btn-success" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

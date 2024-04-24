@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="comntainer">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center display-3 py-5">Recipes</h1>
+            <ul class="list-group">
+                <h1 class="text-primary">Hello {{ user.username | upper }}</h1>
+                {% for recipe in recipes %}
+
+                <a class="list-group-item" href="{% url 'recipe' recipe.id %}">
+                    <header class="d-flex justify-content-between">
+                        {% if recipe.user.username %}
+
+                        <h1 class="fw-bold text-success">{{ recipe.name }}</h1>
+                    
+                        {% else %}
+                    
+                            <p class="fw-bold text-primary">{{ user.username | upper }}Not recipes yet.</p>
+                        {% endif %}
+                        <h4 class="text-info">{{ recipe.user.username }}</h4>
+                        
+                    </header>
+                    <h3 class="recipe_description text-danger">Description:</h3>
+                        <p>{{  recipe.recipe_description}}</p>
+                    <h3 class="ingredients text-danger">Ingredients:</h3>
+                        <p>{{  recipe.ingredients }}</p>
+                    <h3 class="preparation text-danger">Preparation:</h3>
+                        <p>{{  recipe.preparation }}</p>
+                    
+                    
+
+                </a>    
+                    
+                {% endfor %}
+                </a>
+            </ul>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}
